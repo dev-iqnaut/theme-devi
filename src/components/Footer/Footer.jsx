@@ -120,11 +120,12 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-[#202020] w-full h-[50px] ">
-        <p className="text-xs md:text-sm text-white mx-auto p-3">
+      <div className="bg-[#202020] w-full h-[50px] flex text-white  items-center gap-32">
+        <p className="text-xs md:text-sm text-white ">
           Copyright @2024 <span className="text-[#FE6440]">edunity</span> || All
           Rights Reserved
         </p>
+        <p className="text-xs md:text-sm text-white ">Designed by <span className="text-[#FE6440]">Kumaradevi</span></p>
       </div>
     </div>
   );
