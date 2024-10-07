@@ -14,7 +14,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
-   
+    "firebase": "^10.14.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icon": "^1.0.0",
@@ -24,7 +24,7 @@
     "slick-react-carousel": "^0.2.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.0", 
+    "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
