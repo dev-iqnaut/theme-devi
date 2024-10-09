@@ -11,9 +11,9 @@ const CourseCard = ({course}) => {
   return (
     <div>
       {/* card */}
-      <div className=" w-[400px]  min-h-[300px] flex flex-col sm:flex-row sm:w-[500px] sm:h-[250px] bg-[#FFFFFF]  p-2 rounded-[4px] shadow-md sm:mx-auto">
+      <div className=" w-full  min-h-[300px] flex flex-col sm:flex-row sm:w-[500px] sm:h-[250px] bg-[#FFFFFF]  p-2 rounded-[4px] shadow-md mx-auto">
         {/* left */}
-        <div className="w-[100%] sm:w-[45%] h-[100%] relative ">
+        <div className="w-[100%] sm:w-[45%] h-[100%] relative mx-auto ">
           <img src={course.img} alt="" className="w-[100%] h-[100%] object-cover bg-cover rounded-[4px]" />
           <p className="absolute top-[20px] left-[20px] bg-[#FE6440] text-white px-2 py-1 cursor-pointer hover:scale-105"><Link to='/courses/details'>{course.main}</Link></p>
         </div>

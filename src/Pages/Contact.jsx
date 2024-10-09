@@ -13,7 +13,7 @@ const Contact = () => {
        </div>
       </div>
       <div className="flex justify-center items-center">
-        <div className="flex flex-col w-full gap-3 md:flex-row bg-[#E8E8F4] md:w-[80%] min-h-[600px] my-[80px]  md:gap-40 mx-auto">
+        <div className="flex flex-col w-full gap-3 lg:flex-row bg-[#E8E8F4] md:w-[80%] min-h-[600px] my-[80px]  lg:gap-40 mx-auto">
           {/* left */}
           <div className="w-full md:w-[500px] px-3 h-[100%] mt-10 md:px-16 py-4 ">
             <h1 className=" font-semibold text-xl">Get In Touch</h1>

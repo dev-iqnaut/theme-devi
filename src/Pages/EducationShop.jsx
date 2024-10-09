@@ -15,7 +15,7 @@ const EducationShop = () => {
         </div>
       </div>
 
-      <div className="w-full md:w-[80%] mx-auto my-[80px]">
+      <div className="w-full lg:w-[80%] mx-auto my-[80px]">
         <div className="flex justify-between ">
           <p className="font-medium">Showing 1-8 of 13 results</p>
           <select
@@ -27,7 +27,7 @@ const EducationShop = () => {
           </select>
         </div>
         <div className=" mt-[50px]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-6 mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 mx-auto">
             <ShopCard />
             <ShopCard />
             <ShopCard />

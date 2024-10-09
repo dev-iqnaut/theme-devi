@@ -11,7 +11,7 @@ const Blog = () => {
        <p className="text-xs sm:text-sm mt-5 font-medium">Home <span className="text-[#FE6440]">//</span> Blog</p>
        </div>
       </div>
-      <div className="mx-auto w-full grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-y-12 my-[80px]  md:w-[70%]">
+      <div className="mx-auto w-[80%] grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-y-12 my-[80px] lg:w-[70%]">
        <BlogCard/>
        <BlogCard/>
        <BlogCard/>

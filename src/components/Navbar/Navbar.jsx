@@ -10,6 +10,7 @@ import LogoIcon from "../common/LogoIcon";
 import Arrow from "../common/Arrow";
 import Cart from "../common/Cart";
 import Shop from "../common/Shop";
+import Responsive from "./Responsive";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import {faRightArrow} from "@fortawesome/free-solid-svg-icons"
 const Navbar = () => {
@@ -24,16 +25,16 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 z-[999]">
       <div className="flex shadow z-40  w-[100%] bg-white h-[90px]  justity-between items-center">
-        <div className="w-[100%] md:w-[90%] mx-auto flex justify-between items-center">
+        <div className="w-[100%] lg:w-[90%] mx-auto flex justify-between items-center">
           {/* logo */}
-          <div className="font-medium text-3xl flex gap-2 px-4 md:px-0">
+          <div className="font-medium text-3xl flex gap-2 px-4 lg:px-0">
             <div className="text-[#795DD8]">
               <LogoIcon />
             </div>
             <h1>edunity</h1>
           </div>
           {/* menu */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <ul className="nav-link flex gap-3  relative">
               <li className="px-4 py-1 rounded-full border border-transparent hover:border-[#795DD8] hover:text-[#795DD8] transition-all duration-200">
                 {" "}
@@ -160,10 +161,10 @@ const Navbar = () => {
                 </Link>
               </div>
             {/* login button */}
-            <div className="md:flex justify-center items-center hidden ">
-              <div className="flex justify-between w-[230px] h-[50px] bg-[#7768E5] rounded-full ">
+            <div className="lg:flex justify-center items-center hidden ">
+              <div className="flex justify-between w-[150px] h-[50px] bg-[#7768E5] rounded-full ">
                 <button className="px-5 py-2  text-white text-sm">
-                  <Link to="/signup">Create an Account</Link>
+                  <Link to="/signup">Signin</Link>
                 </button>
                 <div className="w-12 h-12 bg-[#795DD8] shadow-md rounded-full flex justify-center items-center text-white">
                   <Arrow />
@@ -173,7 +174,7 @@ const Navbar = () => {
             </div>
             {/* bar menu */}
           <div
-            className="block md:hidden px-4 text-2xl"
+            className="block lg:hidden px-4 text-2xl"
             onClick={() => setSideBarOpen(!sidebarOpen)}
           >
             <Bars />
@@ -182,8 +183,8 @@ const Navbar = () => {
           
           {/* responsive menubar */}
           {sidebarOpen && (
-            <div className="absolute top-[100px] right-0 w-[50%] bg-white shadow-md md:hidden">
-              <ResponsiveNavBar
+            <div className="absolute top-[100px] right-0 w-[60%] md:w-[25%] bg-white shadow-md lg:hidden ">
+              <Responsive
                 active={active}
                 setActive={setActive}
                 submenuActive={submenuActive}

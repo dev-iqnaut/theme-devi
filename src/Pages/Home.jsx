@@ -112,11 +112,11 @@ console.log(courseData)
     <div>
       <Hero />
       {/* categories */}
-      <div className="">
+      <div className="w-full">
         <h3 className="mt-24 text-3xl font-semibold text-center ">
           Browse By Categories
         </h3>
-        <div className="w-full md:w-[66%] mx-auto mt-16 grid grid-cols-1 sm:grid-cols-3 gap-2 gap-y-8">
+        <div className="w-[80%] md:w-[80%] lg:w-[66%] mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-8">
           {categoryData.map((item)=>
           <CategoryCard item={item} key={item.id}/>
         )}
@@ -125,9 +125,9 @@ console.log(courseData)
 
       {/* top courses */}
       <div className="bg-[#FDF9F6] w-full min-h-[950px] pt-[20px] mt-24">
-        <div className="w-[70%] mx-auto mt-12 ">
+        <div className="w-[80%] md:w-[70%] mx-auto mt-12 ">
           <h3 className="text-3xl font-semibold ">Top Courses</h3>
-          <div className="flex justify-between mr-4">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-0 justify-between mx-auto">
             <h4 className="mt-4 font-medium text-gray-700">
               Edunity Course Student Can Join With Us
             </h4>
@@ -142,7 +142,7 @@ console.log(courseData)
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-12 gap-y-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-12 gap-y-8">
             {courseData.slice(0,4).map((course)=>
            <div key={course.id}> <CourseCard  course={course}/></div>
           )}
@@ -156,7 +156,7 @@ console.log(courseData)
       <section>
         <div className="w-full md:w-[80%] mx-auto mt-24">
           <div className="flex gap-10 ">
-            <div className="w-[100%] md:w-[50%] hidden md:block">
+            <div className="w-[100%] lg:w-[50%] hidden lg:block">
               <div className="grid grid-cols-1 md:grid-cols-2 space-y-20 md:gap-12">
                 <div className="w-[300px] h-[300px] ">
                   <img
@@ -174,7 +174,7 @@ console.log(courseData)
                 </div>
               </div>
               <div className="mt-4 w-[580px] h-[290px] relative flex justify-end">
-                <div className="hidden md:block w-[200px] h-[200px] bg-amber-100 absolute -top-20 right-[40%] rounded-full ">
+                <div className="hidden lg:block w-[200px] h-[200px] bg-amber-100 absolute -top-20 right-[40%] rounded-full ">
                   <div className="flex flex-col justify-center items-center top-[60px] right-[30px] absolute">
                     <p className="text-2xl text-gray-800 font-bold">35+</p>
                     <p className="mt-3 font-medium">Years Experience</p>
@@ -247,7 +247,7 @@ console.log(courseData)
           muted
           type="video/mp4"
         ></video>
-        <div className="absolute top-20 left-40 z-10 ">
+        <div className="absolute top-20 md:left-40  left-5  z-10 opacity-80 md:opacity-100">
           <p className="text-[#FFD25D] font-semibold"> Join Our New Session</p>
           <h4 className="text-4xl text-white font-bold mt-6">
             Call To Enroll Your Child
@@ -268,9 +268,9 @@ console.log(courseData)
       {/* why choose us */}
       <div className="mt-20 w-[80%] mx-auto  md:h-[550px]">
         <div className="">
-          {/* left side image */}
-          <div className="flex flex-col md:flex-row  gap-20 justify-between">
-            <div className="w-full md:w-1/2 flex flex-col justify-center">
+          {/* left side content */}
+          <div className="flex flex-col lg:flex-row  gap-20 justify-between">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center">
               <h2 className="font-semibold text-3xl">Why Choose Us?</h2>
               <h4 className="mt-12 font-medium text-xl">
                 Creating A Community Of Lifelong Learners
@@ -288,9 +288,9 @@ console.log(courseData)
                 <Card />
               </div>
             </div>
-            {/* right side content */}
-            <div className="w-full md:w-1/2  ">
-              <div className="w-full h-[550px]">
+            {/* right side image */}
+            <div className="w-full lg:w-1/2  block">
+              <div className="w-full h-[550px] ">
                 <img
                   src={img}
                   alt=""
@@ -302,7 +302,7 @@ console.log(courseData)
         </div>
       </div>
       {/* details card */}
-      <div className="hidden md:block bg-[#FFD25D] mt-28 mx-60 rounded-full px-12 py-10 absolute top-[555%] z-10 ">
+      <div className="hidden lg:block bg-[#FFD25D] mt-28 mx-60 rounded-full px-12 py-10 absolute top-[555%] z-10 ">
         <div className=" flex items-center gap-12">
           {/*  */}
           <div className="flex items-center gap-3">
@@ -360,10 +360,10 @@ console.log(courseData)
         </div>
       </div>
       {/* testimonials */}
-      <div className="bg-[#F8F7FF] w-full md:h-[550px] pt-32 md:mt-60 relative mt-0 ">
+      <div className="bg-[#F8F7FF] w-full lg:h-[550px] pt-32 md:mt-60 relative mt-0 ">
         <div className="w-[80%] mx-auto relative">
           <h3 className="font-semibold text-center text-2xl">Testimonials</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mt-16 ">
+          <div className="grid grid-cols-1  lg:grid-cols-3 gap-2 mt-16 ">
             <div className="z-10">
               <TestimonialCard />
             </div>
@@ -374,22 +374,22 @@ console.log(courseData)
               <TestimonialCard />
             </div>
           </div>
-          <div className="hidden md:block absolute top-[45px] left-[10px] ">
+          <div className="hidden lg:block absolute top-[45px] left-[10px] ">
             <Quote />
           </div>
-          <div className="hidden md:block absolute top-[45px] left-[410px]">
+          <div className="hidden lg:block absolute top-[45px] left-[410px]">
             <Quote />
           </div>
-          <div className="hidden md:block absolute top-[45px] left-[820px] ">
+          <div className="hidden lg:block absolute top-[45px] left-[820px] ">
             <Quote />
           </div>
         </div>
       </div>
-      <div className=" w-full  md:h-[550px]">
+      <div className=" w-full  lg:h-[550px]">
         {/* meet our instructor */}
-        <div className="flex flex-col md:flex-row w-[80%] mx-auto mt-20">
+        <div className="w-[80%] flex flex-col lg:flex-row md:w-[80%] mx-auto mt-20">
           {/* left content */}
-          <div className="w-full md:w-[50%] flex  flex-col justify-center ">
+          <div className="w-full lg:w-[50%] flex  flex-col justify-center mx-auto">
             <h1 className="text-3xl font-semibold ">
               Meet Our Expert Instructor
             </h1>
@@ -424,9 +424,9 @@ console.log(courseData)
           </div>
 
           {/* right image */}
-          <div className="w-[50%] px-12">
+          <div className="w-[50%] px-12 md:mt-12 lg:mt-0">
         
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-12 md:gap-x-72 lg:gap-x-0">
               {teacherData && instructorFilter.map((item)=>
               <div className="border-2 border-blue-700 w-[202px] h-[242px] flex justify-center items-center rounded-sm" key={item.id}>
                 <InstructorCard item={item} />
@@ -437,24 +437,24 @@ console.log(courseData)
         </div>
       </div>
       {/* discover your brain  */}
-      <div className="bg-[#F4F4F4] w-full md:h-[550px] pt-24 mt-20">
-        <div className="w-full md:w-[70%] mx-auto">
+      <div className="bg-[#F4F4F4] w-full lg:h-[550px] pt-24 mt-20">
+        <div className="w-full lg:w-[70%] mx-auto">
           <div className="flex justify-center">
             <h3 className="text-3xl font-semibold ">
               Discover Your <span className="">Gain</span>
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 ">
             <DiscoverCard />
             <DiscoverCard />
           </div>
         </div>
       </div>
       {/* blog */}
-      <div className="w-[70%] mx-auto mt-28">
-        <div className="flex flex-col md:flex-row justify-between mr-16 ">
-          <h3 className="text-4xl gap-4 md:gap-0 md:text-3xl font-semibold">
+      <div className="w-[80%] lg:w-[70%] mx-auto mt-28">
+        <div className="flex flex-col lg:flex-row justify-between mx-auto ">
+          <h3 className="text-4xl gap-4 lg:gap-0 md:text-3xl font-semibold">
             Popular Post
           </h3>
 
@@ -469,20 +469,20 @@ console.log(courseData)
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 mt-16 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-3">
           <BlogCard />
           <BlogCard />
           <BlogCard />
         </div>
       </div>
       {/* newsletter */}
-      <div className="bg-[#704FE6] mt-24 flex flex-col md:flex justify-around items-center h-[200px] ">
+      <div className="w-full bg-[#704FE6] mt-24 flex flex-col md:flex-row justify-around items-center h-[200px] ">
         <div className="text-white">
           <h4 className="text-3xl font-semibold">Join Our Newsletter</h4>
           <p className="text-xs mt-4 text-[#ffff] font-light">Subscribe Our Newsletter to get our Latest Updates and News</p>
         </div>
        <div>
-        <div className="bg-white rounded-md px-2 py-1">
+        <div className="bg-white rounded-md px-2 py-1 flex ">
           <input type="text" placeholder="Enter Your Email" className="border-none outline-none "/>
           <button className="bg-[#18254F] px-5 py-3 text-xs text-white rounded-md">Subscribe Now</button>
         </div>

@@ -7,7 +7,7 @@ import Arrow from '../common/Arrow'
 const BlogCard = () => {
   return (
     <div>
-         <div className="w-full bg-[#F2F2F2] shadow-sm md:w-[300px] h-[420px]   rounded-[4px] p-4 ">
+         <div className="w-full bg-[#F2F2F2] shadow-sm  md:w-[300px] h-[420px]   rounded-[4px] p-4 ">
             {/* top */}
             <div className="w-[100%] h-[150px]">
                 <img src={img1} alt="" className="w-[100%] h-[100%] object-cover rounded-[4px]" />

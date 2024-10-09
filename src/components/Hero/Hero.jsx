@@ -10,7 +10,7 @@ const Hero = () => {
 
 <div className='w-full min-h-[500px] bg-[#FBF8FF] flex justify-between relative flex-wrap '>
     {/* left */}
-    <div className='md:pl-[140px] py-[110px] px-6 md:px-0'>
+    <div className='lg:pl-[140px] py-[110px] px-6 lg:px-0'>
        <p className='text-sm text-[#6E4EE6] '>WELCOME EDUCOM ONLINE COURSES</p>
        <h1 className='text-4xl mt-4'>Achieving Your Dreams </h1>
        <h1 className='text-4xl mt-3'>Through <span className='text-[#e9c73b]'>Education</span></h1>
@@ -29,12 +29,12 @@ const Hero = () => {
     </div>
    
     {/* right */}
-    <div className='w-[600px] h-[500px] '>
+    <div className='w-full lg:w-[600px] h-[500px] '>
         <img src={image_1} alt="" className='h-[100%] object-cover '/>
     </div>
 
 </div>
-<div className='hidden sm:block bg-white shadow-md absolute bottom-[300px] right-[500px] w-[200px] h-[100px] pt-4' >
+<div className='hidden lg:block bg-white shadow-md absolute bottom-[300px] right-[500px] w-[200px] h-[100px] pt-4' >
         <p className='px-4'>200+ Instructor</p>
         <div className='flex mt-2 relative '>
         <div className='w-[40px] h-[40px] bg-[#18254F] rounded-full absolute right-[30px] z-50 flex justify-center items-center border-2 border-white'>

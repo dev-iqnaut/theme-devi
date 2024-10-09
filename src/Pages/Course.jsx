@@ -14,7 +14,7 @@ const Course = () => {
       </div>
       {/* course card */}
       <div className="flex justify-center items-center w-full bg-[#FAFAFA] ">
-        <div className="w-full sm:w-[70%] h-full my-[80px] mx-auto ">
+        <div className="w-full md:w-[70%] h-full my-[80px] mx-auto ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8">
            {courseData.map((course)=>
            <CourseCard  key={course.id} course={course}/>)}

@@ -13,7 +13,7 @@ const Service = () => {
 
       <div className="w-[70%] mx-auto my-[80px]">
         <h2 className="text-center text-3xl font-semibold">Check Out Educate Features <br /> Win Any Exam</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:gap-24 lg:gap-0">
           <ServiceCard />
           <ServiceCard />
           <ServiceCard />

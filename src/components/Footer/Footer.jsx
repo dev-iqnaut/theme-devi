@@ -11,9 +11,9 @@ import AngleRight from "../common/AngleRight";
 const Footer = () => {
   return (
     <div>
-      <div className="bg-[#17141B] w-full min-h-[480px] text-white ">
+      <div className="bg-[#17141B] w-full min-h-[480px] text-white mx-auto">
         {/* header */}
-        <div className="flex flex-col md:flex-row  justify-around border-b border-[#37343D] p-10 ">
+        <div className="flex flex-col md:flex-row  justify-around border-b border-[#37343D] p-10  ">
           <div className=" ">
             <p className="text-[#6055AA] text-sm">Address</p>
             <h1 className="mt-3 text-xl font-semi-bold">1923 Boggess Street</h1>
@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
         {/* footer */}
-        <div className="flex flex-col gap-5 md:flex-row justify-around mx-auto w-[80%] md:gap-10 mt-20 ">
+        <div className="flex flex-col gap-5 md:flex-row justify-around mx-auto w-[80%] lg:gap-10 mt-20 ">
           <div>
             <div className="flex gap-2">
               <div className="text-3xl">
@@ -94,8 +94,8 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h6 className="mt-5 md:font-semibold md:mt-0">Gallery</h6>
-            <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-2 mt-6">
+            <h6 className="mt-5 md:font-semibold md:mt-0 ">Gallery</h6>
+            <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-6 md:gap-5 lg:gap-2">
               <Gallery />
               <Gallery />
               <Gallery />
@@ -104,7 +104,7 @@ const Footer = () => {
               <Gallery />
             </div>
           </div>
-          <div>
+          <div className="md:hidden lg:block">
             <h6 className="mt-5 md:font-semibold md:mt-0">Subscribe</h6>
             <div className="input-group flex flex-col mt-6">
               <input
@@ -120,7 +120,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-[#202020] w-full h-[50px] flex text-white  items-center gap-32">
+      <div className="bg-[#202020] w-full h-[50px] flex text-white  items-center gap-32 ">
         <p className="text-xs md:text-sm text-white ">
           Copyright @2024 <span className="text-[#FE6440]">edunity</span> || All
           Rights Reserved

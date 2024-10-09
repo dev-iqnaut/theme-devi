@@ -36,10 +36,10 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center">
-        <div className="mt-[120px] w-[80%] h-full relative flex flex-col md:flex-row ">
+      <div className="flex justify-center items-center w-full">
+        <div className="mt-[120px] lg:w-[80%] h-full relative flex flex-col lg:flex-row ">
           {/* leftside imge */}
-          <div className="hidden w-[50%] h-full md:grid grid-cols-2 space-y-28 gap-3 ">
+          <div className="hidden w-[50%] h-full lg:grid grid-cols-2 space-y-28 gap-3 ">
             <div>
               <img
                 src={img}
@@ -55,7 +55,7 @@ const About = () => {
               />
             </div>
           </div>
-          <div className="hidden md:block w-[160px] h-[150px] bg-amber-50 absolute top-[-48px] left-[255px] border-2 border-gray-100">
+          <div className="hidden lg:block w-[160px] h-[150px] bg-amber-50 absolute top-[-48px] left-[255px] border-2 border-gray-100">
             <div className="flex flex-col gap-3 justify-center items-center h-full">
               <div className="w-[70px] h-[70px] rounded-full bg-white relative border-2 border-orange-600">
                 <p className="absolute top-[23px] left-[20px]">35+</p>
@@ -65,10 +65,10 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="hidden md:block w-[150px] h-[10px] bg-purple-400 absolute bottom-[50px] rounded-full"></div>
-          <div className="hidden md:block w-[100px] h-[10px] bg-emerald-400 absolute bottom-[70px] rounded-full"></div>
+          <div className="hidden lg:block w-[150px] h-[10px] bg-purple-400 absolute bottom-[50px] rounded-full"></div>
+          <div className="hidden lg:block w-[100px] h-[10px] bg-emerald-400 absolute bottom-[70px] rounded-full"></div>
           {/* right side content */}
-          <div className="w-full md:w-[70%] h-full md:px-24  ">
+          <div className="w-[100%] lg:w-[70%] h-full md:px-24  ">
             <div>
               <h1 className="text-2xl font-semibold">
                 Benefit From Our Online Learning Expertise Earn{" "}
@@ -107,7 +107,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="hidden md:block bg-[#FE6440] mt-28 mx-auto rounded-full px-12 py-10 md:w-[70%] w-[50%]">
+      <div className="hidden lg:block bg-[#FE6440] mt-28 mx-auto rounded-full px-12 py-10 md:w-[70%] w-[50%]">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/*  */}
           <div className="flex flex-col md:flex-row items-center gap-3">
@@ -170,7 +170,7 @@ const About = () => {
           Creating A Community Of <br />
           Lifelong Learners
         </h3>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-3 w-[100%]">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 gap-3 w-[100%]">
           <TestimonialCard />
           <TestimonialCard />
           <TestimonialCard />
@@ -181,7 +181,7 @@ const About = () => {
         Our Courses
       </h3>
 
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 mt-24 mx-auto md:w-[70%] gap-y-8">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 mt-24 mx-auto lg:w-[70%] gap-y-8">
       {courseData.slice(0,4).map((course)=>
         <CourseCard course={course} />)}
       
@@ -192,7 +192,7 @@ const About = () => {
           Meet Our Instructor
         </h3>
 
-       <div className="mt-12 grid grid-cols-1 sm:grid-cols-4  w-[60%] mx-auto gap-8 md:gap-0 "> 
+       <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4  w-[80%] lg:w-[60%] mx-auto gap-8 md:gap-0 "> 
       
           {teacherData &&
             teacherData.slice(0, 4).map((item) => (

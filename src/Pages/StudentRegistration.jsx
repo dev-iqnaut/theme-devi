@@ -6,7 +6,7 @@ const StudentRegistration = () => {
     <div >
       <div className="text-6xl bg-gradient-to-r from-[#EBD6DB] to-[#DCDAF2] h-[300px] flex items-center justify-center font-bold w-[100%]">
       <div className="flex flex-col items-center justify-center">
-       <h1 className="text-4xl md:text-6xl font-bold">STUDENT REGISTRATION</h1>
+       <h1 className="text-4xl md:text-6xl font-bold text-center">STUDENT REGISTRATION</h1>
        <p className="text-sm mt-5 font-medium">Home <span className="text-[#FE6440]">//</span> Student Registration</p>
        </div>
       </div>

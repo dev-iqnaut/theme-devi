@@ -17,9 +17,9 @@ const TestimonialCard = () => {
           aperiam quos quaerat saepe ducimus nisi possimus adipisci iusto qui.
           Deleniti aperiam cupiditate qui ipsam numquam.
         </p>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col md:flex-row  gap-2 items-center md:gap-4">
           {/* left */}
-          <div className="w-[50px] h-[50px] bg-white rounded-full">
+          <div className="w-[50px] h-[50px] bg-white rounded-full mt-4 md:mt-0">
             <img
               src={img}
               alt=""
