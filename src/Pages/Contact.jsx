@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  fa1, faClock, faF,faMapLocation, faPhone } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faInstagram, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import {  faClock, faMapLocation, faPhone } from "@fortawesome/free-solid-svg-icons";
+
 import { siteContext } from "../context/SiteContextProvider";
 import Facebook from "../components/common/Facebook";
 import LinkedIn from "../components/common/LinkedIn";

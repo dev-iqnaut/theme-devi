@@ -1,22 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import db from "../config/firebase";
-const Gallery = () => {
-  const [imageList, setImageList] = useState([]);
+import React, { useContext } from "react";
 
-  // getting image from db
+import GalleryCard from "../components/gallery/GalleryCard";
+import { siteContext } from "../context/SiteContextProvider";
+const GalleryPage = () => {
+ const data=useContext(siteContext)
 
-const getImage=async ()=>{
-  const res=(await getDocs(collection(db,"sites"))).docs.map((doc)=>({
-...doc.data()
-  }))
-  setImageList(res[0].siteData.Gallery.images)
-  console.log(res)
-}
-  useEffect(() => {
-    getImage();
-  }, []);
-  console.log(imageList)
   return (
     <>
       <div className="flex text-4xl md:text-6xl bg-gradient-to-r from-[#EBD6DB] to-[#DCDAF2] h-[300px] items-center justify-center  font-bold ">
@@ -27,8 +15,18 @@ const getImage=async ()=>{
           </p>
         </div>
       </div>
+      <div className="w-full lg:w-[80%] mx-auto my-[80px] ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-12 ">
+          {data?.Gallery?.images.map((img,i)=>
+            ( 
+              <GalleryCard img={img} key={i}/>
+            )
+          )}
+        
+        </div>
+      </div>
     </>
   );
 };
 
-export default Gallery;
+export default GalleryPage;
