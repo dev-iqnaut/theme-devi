@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  fa1, faClock, faF,faMapLocation, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { siteContext } from "../context/SiteContextProvider";
+import Facebook from "../components/common/Facebook";
+import LinkedIn from "../components/common/LinkedIn";
+import Twitter from "../components/common/Twitter";
+import Whatsapp from "../components/common/Whatsapp";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
+  const data=useContext(siteContext)
+  console.log(data.ContactUs)
   return (
     <div>
       <div className="text-6xl bg-gradient-to-r from-[#EBD6DB] to-[#DCDAF2] h-[300px] flex items-center justify-center  font-bold ">
@@ -30,7 +38,7 @@ const Contact = () => {
               <p className="text-gray-400">Our Address</p>
               <h4 className="font-bold text-lg mt-1">
                 1564 Goosetown Drive <br />
-                Matthews,NC 28105
+                {/* Matthews,NC 28105 */}{data?.ContactUs?.location}
               </h4>
               </div>
               </div>
@@ -41,7 +49,7 @@ const Contact = () => {
                 <div>
               <p className="text-gray-400">Hours Of Operation</p>
               <h4 className="font-bold text-lg mt-1">
-                Mon-Fri:9:00am to 5:00pm
+                Mon-Fri:{data?.ContactUs?.opening_hours}am to 5:00pm
               </h4>
               <p className="text-gray-400">[2nd sat Holiday]</p>
               </div>
@@ -51,7 +59,7 @@ const Contact = () => {
             <div>
               <p className="text-gray-400">Contact</p>
               <h4 className="font-bold text-lg mt-1">
-                +99-35895-4565 <br /> supportyou@info.com
+               {data?.ContactUs?.phone_number} <br /> {data?.ContactUs?.email}
               </h4>
               </div>
             </div>
@@ -62,10 +70,10 @@ const Contact = () => {
               <p>Customer Care</p>
             </div>
             <div className="flex gap-2">
-        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><FontAwesomeIcon icon={faFacebook}  className="text-[#FE6440]  text-xl"/></div>
-        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><FontAwesomeIcon icon={faTwitter}  className="text-[#FE6440]  text-xl"/></div>
-        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><FontAwesomeIcon icon={faInstagram}  className="text-[#FE6440]  text-xl"/></div>
-        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><FontAwesomeIcon icon={faWhatsapp}  className="text-[#FE6440]  text-xl"/></div>
+        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><div className="text-xl text-orange-500"><Link to={data?.ContactUs?.facebook_link}><Facebook/></Link></div></div>
+        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><div className="text-xl text-orange-500"><Link to={data?.ContactUs?.linkedin_link}><LinkedIn/></Link></div></div>
+        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><div className="text-xl text-orange-500"><Link to={data?.ContactUs?.twitter_link}><Twitter/></Link></div></div>
+        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><div className="text-xl text-orange-500"><Link to={data?.ContactUs?.facebook_link}><Whatsapp/></Link></div></div>
         </div>
         </div>
           </div>

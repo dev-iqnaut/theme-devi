@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import img from "../assets/blog/img3.jpeg";
 import img1 from "../assets/blog/img5.jpg";
 import StudentIcon from "../components/common/StudentIcon";
@@ -11,19 +11,50 @@ import InstructorCard from "../components/instructor/InstructorCard";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import teacherData from "../sampleData/TeacherData";
 import courseData from "../sampleData/CourseData";
+import { getDocs, collection } from "firebase/firestore";
+import db from "../config/firebase";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { siteContext } from "../context/SiteContextProvider";
 
 
 const About = () => {
+  // const [data, setData] = useState([]);
+  const data=useContext(siteContext);
+  console.log(data["About-Us"].mission)
+  // slider
   const settings = {
     dots: false, // Show dots navigation
-    infinite: false, // No infinite scrolling
+    infinite: true, // No infinite scrolling
     speed: 800, // Speed of transition
     slidesToShow: 4, // Number of instructors to show at a time
-    slidesToScroll: 1, 
-    arrows:false,
-    autoplay:true,
-    autoplayspeed:4000,// Scroll 1 instructor at a time
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 4000, // Scroll 1 instructor at a time
   };
+
+  // get mission and vision data from firestore db
+  // const getData = async () => {
+  //   try {
+  //     const res = (await getDocs(collection(db, "sites"))).docs.map((doc) => ({
+  //       // id:doc.id,
+  //       ...doc.data(),
+  //     }));
+
+  //     console.log(res[0].siteData);
+  //     console.log(res[0].siteData["About-Us"]);
+  //     setData(res[0].siteData["About-Us"]);
+
+  //     console.log("mission ", data);
+  //   } catch (e) {
+  //     console.error(e);
+  //   }
+  // };
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <div>
@@ -68,7 +99,7 @@ const About = () => {
           <div className="hidden lg:block w-[150px] h-[10px] bg-purple-400 absolute bottom-[50px] rounded-full"></div>
           <div className="hidden lg:block w-[100px] h-[10px] bg-emerald-400 absolute bottom-[70px] rounded-full"></div>
           {/* right side content */}
-          <div className="w-[100%] lg:w-[70%] h-full md:px-24  ">
+          <div className="w-[80%] lg:w-[70%] h-full md:px-24 mx-auto ">
             <div>
               <h1 className="text-2xl font-semibold">
                 Benefit From Our Online Learning Expertise Earn{" "}
@@ -79,23 +110,26 @@ const About = () => {
                 Reprehenderit, numquam.
               </p>
               <div>
-                <div className="flex flex-col md:flex-row justify-center items-center mt-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2  mt-4 gap-4">
                   {/* mission */}
                   <div>
                     <h3 className="font-semibold">Our Mission</h3>
                     <p className="text-sm text-gray-700 mt-3">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      {data["About-Us"].mission}
+
+                      {/* Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Eos sint et dolor possimus voluptatem exercitationem id
-                      nesciunt repellat nemo cum.
+                      nesciunt repellat nemo cum. */}
                     </p>
                   </div>
                   {/* vision */}
                   <div>
                     <h3 className="font-semibold">Our Vision</h3>
                     <p className="text-sm text-gray-700 mt-3">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      {data["About-Us"].vision}
+                      {/* Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Magnam vitae asperiores quidem accusantium iste, optio
-                      dignissimos soluta doloribus! Assumenda, rem.
+                      dignissimos soluta doloribus! Assumenda, rem. */}
                     </p>
                   </div>
                 </div>
@@ -165,12 +199,12 @@ const About = () => {
         </div>
       </div>
       {/* testimonials */}
-      <div className="w-full mx-auto md:w-[80%]  mt-24 ">
+      <div className="w-[90%] mx-auto md:w-[80%]  mt-24 ">
         <h3 className="text-xl md:text-2xl font-semibold text-center">
           Creating A Community Of <br />
           Lifelong Learners
         </h3>
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 gap-3 w-[100%]">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3 w-[100%]">
           <TestimonialCard />
           <TestimonialCard />
           <TestimonialCard />
@@ -182,9 +216,9 @@ const About = () => {
       </h3>
 
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 mt-24 mx-auto lg:w-[70%] gap-y-8">
-      {courseData.slice(0,4).map((course)=>
-        <CourseCard course={course} />)}
-      
+        {courseData.slice(0, 4).map((course) => (
+          <CourseCard course={course} />
+        ))}
       </div>
       {/* our Instructor */}
       <div className="bg-[#E8E8F4] w-full min-h-[550px] pt-20 mt-28">
@@ -192,35 +226,36 @@ const About = () => {
           Meet Our Instructor
         </h3>
 
-       <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4  w-[80%] lg:w-[60%] mx-auto gap-8 md:gap-0 "> 
-      
-          {teacherData &&
-            teacherData.slice(0, 4).map((item) => (
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 w-[80%] lg:w-[60%] mx-auto gap-8 md:gap-0 "> 
+
+        {teacherData && 
+          // <Slider {...settings}>
+            teacherData.slice(0,4).map((item) => (
               <div
+                key={item.id}
                 className=" w-[202px] h-[242px] flex justify-center items-center rounded-sm"
-           
               >
-                <InstructorCard item={item}      key={item.id}/>
+                <InstructorCard item={item} />
               </div>
-            
             ))}
-       
-         </div> 
-        <div className="md:mt-8 flex justify-center gap-5 py-6">
-          <div className="w-[60px] h-[60px] bg-orange-600 rounded-full relative cursor-pointer hover:scale-95  transition-all">
-            <FontAwesomeIcon
-              icon={faArrowLeft}
-              className="text-white absolute top-[20px] right-[24px]"
-            />
-          </div>
-          <div className="w-[60px] h-[60px] bg-orange-600 rounded-full relative cursor-pointer hover:scale-95 transition-all">
-            <FontAwesomeIcon
-              icon={faArrowRight}
-              className="text-white absolute top-[20px] right-[24px]"
-            />
-          </div>
+          {/* </Slider> */}
+        
+      </div>
+      <div className="md:mt-8 flex justify-center gap-5 py-6">
+        <div className="w-[60px] h-[60px] bg-orange-600 rounded-full relative cursor-pointer hover:scale-95  transition-all">
+          <FontAwesomeIcon
+            icon={faArrowLeft}
+            className="text-white absolute top-[20px] right-[24px]"
+          />
+        </div>
+        <div className="w-[60px] h-[60px] bg-orange-600 rounded-full relative cursor-pointer hover:scale-95 transition-all">
+          <FontAwesomeIcon
+            icon={faArrowRight}
+            className="text-white absolute top-[20px] right-[24px]"
+          />
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import RightArrow from "../common/RightArrow";
 import "../../App.css";
 
 import Bars from "../common/Bars";
-import ResponsiveNavBar from "./ResponsiveNavBar";
+
 import LogoIcon from "../common/LogoIcon";
 import Arrow from "../common/Arrow";
 import Cart from "../common/Cart";
@@ -42,7 +42,7 @@ const Navbar = () => {
               </li>
               <li className="px-4 py-1 rounded-full border border-transparent hover:border-[#795DD8] hover:text-[#795DD8] transition-all duration-200">
                 {" "}
-                <Link to="/about" >
+                <Link to="/about">
                   <button className=" flex gap-2">
                     About Us
                     <div onClick={handleActive}>
@@ -135,8 +135,8 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="px-4 py-1 rounded-full border border-transparent hover:border-[#795DD8] hover:text-[#795DD8] transition-all duration-200">
-                <Link to="/blog" className="hover:text-[#795DD8]">
-                  Blog
+                <Link to="/gallery" className="hover:text-[#795DD8]">
+                 Gallery
                 </Link>
               </li>
               <li className="px-4 py-1 rounded-full border border-transparent hover:border-[#795DD8] hover:text-[#795DD8] transition-all duration-200">
@@ -148,39 +148,38 @@ const Navbar = () => {
           </div>
           <div className="flex justify-end mr-0">
             <div className="flex md:justify-center gap-4 items-center ">
-              <div className="cursor-pointer hover:text-[#795DD8] transition-all duration-200 hover:scale-125">
-                <Link to={"/cart"}>
-                  {" "}
-                  <Cart />
-                </Link>
-              </div>
+             
               <div className="cursor-pointer hover:text-[#795DD8] transition-all duration-200 hover:scale-125">
                 <Link to={"/educationshop"}>
-                  {" "}
                   <Shop />
                 </Link>
               </div>
-            {/* login button */}
-            <div className="lg:flex justify-center items-center hidden ">
-              <div className="flex justify-between w-[150px] h-[50px] bg-[#7768E5] rounded-full ">
-                <button className="px-5 py-2  text-white text-sm">
-                  <Link to="/signup">Signin</Link>
-                </button>
-                <div className="w-12 h-12 bg-[#795DD8] shadow-md rounded-full flex justify-center items-center text-white">
-                  <Arrow />
+              <div className="cursor-pointer hover:text-[#795DD8] transition-all duration-200 hover:scale-125">
+                <Link to={"/cart"}>
+                  <Cart />
+                </Link>
+              </div>
+              {/* login button */}
+              <div className="lg:flex justify-center items-center hidden ">
+                <div className="flex justify-between w-[150px] h-[50px] bg-[#7768E5] rounded-full ">
+                  <button className="px-5 py-2  text-white text-sm">
+                    <Link to="/signup">Signin</Link>
+                  </button>
+                  <div className="w-12 h-12 bg-[#795DD8] shadow-md rounded-full flex justify-center items-center text-white">
+                    <Arrow />
+                  </div>
                 </div>
               </div>
             </div>
-            </div>
             {/* bar menu */}
-          <div
-            className="block lg:hidden px-4 text-2xl"
-            onClick={() => setSideBarOpen(!sidebarOpen)}
-          >
-            <Bars />
+            <div
+              className="block lg:hidden px-4 text-2xl"
+              onClick={() => setSideBarOpen(!sidebarOpen)}
+            >
+              <Bars />
+            </div>
           </div>
-          </div>
-          
+
           {/* responsive menubar */}
           {sidebarOpen && (
             <div className="absolute top-[100px] right-0 w-[60%] md:w-[25%] bg-white shadow-md lg:hidden ">

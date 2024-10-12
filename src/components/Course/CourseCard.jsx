@@ -7,7 +7,7 @@ import Cart from "../common/Cart";
 import {Link} from "react-router-dom"
 import CourseIcon from "./CourseIcon";
 const CourseCard = ({course}) => {
-  console.log("course data",{course})
+  // console.log("course data",{course})
   return (
     <div>
       {/* card */}

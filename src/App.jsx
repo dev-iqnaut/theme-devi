@@ -29,6 +29,7 @@ import CheckOut from './Pages/CheckOut'
 import TopBar from './components/Navbar/TopBar'
 import ServiceDetails from './Pages/ServiceDetails'
 import courseData from './sampleData/CourseData'
+import Gallery from './Pages/Gallery'
 
 
 
@@ -56,6 +57,7 @@ const App = () => {
         <Route path='/courses' element={<Course courseData={courseData}/>}></Route>
         <Route path='/courses/details' element={<CourseDetails/>}></Route>
         <Route path='/event/details' element={<EventDetails/>}></Route>
+        <Route path='/gallery' element={<Gallery/>}></Route>
         <Route path='/blog' element={<Blog/>}></Route>
         <Route path='/pricingtable' element={<PricingTable/>}></Route>
         <Route path='/educationshop' element={<EducationShop/>}></Route>
