@@ -17,7 +17,9 @@ const Course = () => {
         <div className="w-full md:w-[70%] h-full my-[80px] mx-auto ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8">
            {courseData.map((course)=>
-           <CourseCard  key={course.id} course={course}/>)}
+           <div data-aos="fade-up" data-aos-duration="1000">
+            <CourseCard  key={course.id} course={course}/>
+            </div>)}
            
           </div>
         </div>

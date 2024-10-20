@@ -21,14 +21,14 @@ const EventDetails = () => {
         </div>
       </div>
       {/* details */}
-      <div className="w-full mx-auto md:w-[80%] flex flex-col md:flex-row justify-between gap-20 my-[80px]">
+      <div className="w-full mx-auto md:w-[80%] flex flex-col md:flex-row justify-between   gap-12 my-[80px] ">
         {/* left - image */}
-        <div className="w-full md:w-[3/4]">
+        <div className="w-[3/4] ">
           <div className=" h-[400px] ">
             <img
               src={img}
               alt=""
-              className="w-[100%] h-[100%] object-cover opacity-90"
+              className="w-[100%] h-[100%] object-cover opacity-90 rounded-md"
             />
           </div>
           {/* content */}
@@ -36,7 +36,7 @@ const EventDetails = () => {
             <h1 className="font-semibold mt-8 text-xl md:text-3xl">
               These are designed to Provide Hands Training And Skill-Building
             </h1>
-            <div className="flex flex-col items-start gap-3 md:flex-row md:justify-between mt-3 md:gap-0 text-gray-700">
+            <div className="flex flex-col items-start gap-3 md:flex-row md:justify-start  mt-3 md:gap-6 text-gray-700">
               <div className="flex gap-2 item-center justify-center">
                 <p>
                   <FontAwesomeIcon icon={faBook} className="text-[#FE6440]" />
@@ -95,7 +95,7 @@ const EventDetails = () => {
           </div>
         </div>
         {/* right */}
-        <div className="w-full md:w-[1/4] ">
+        <div className="w-full lg:w-[1/4] ">
            <div className="bg-[#E8E8F4] w-[280px] h-[500px] p-5 rounded-md">
              <div className="w-full h-[40%]">
               <img src={img1} alt="" className="w-full h-[100%] object-cover rounded-md"/>

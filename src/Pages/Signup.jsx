@@ -12,9 +12,9 @@ const Signup = () => {
        </div>
             </div>
      
-      <div className="flex  flex-col  w-full sm:flex-row  sm:w-[80%] justify-center my-[80px] mx-auto min-h-[300px]">
+      <div className="flex  flex-col  w-full sm:flex-row  sm:w-[80%] justify-center my-[80px] mx-auto min-h-[300px]" >
         {/* left */}
-        <div className="bg-gray-300  w-full sm:w-[400px] p-10 ">
+        <div className="bg-gray-300  w-full sm:w-[400px] p-10 " >
           <h2 className="font-semi-bold text-2xl ">Signup</h2>
           <div className="input-field mt-5 ">
             <input

@@ -4,17 +4,21 @@ import ShareIcon from "../common/ShareIcon";
 import Facebook from "../common/Facebook";
 import Instagram from "../common/Instagram";
 import LinkedIn from "../common/LinkedIn";
+import { Link, useParams } from "react-router-dom";
 
 
 
 
 const InstructorCard = ({item}) => {
+  if(!item){
+    return <div>loading..</div>
+  }
   const [show, setShow] = useState(false);
-
   const handleClick = () => {
     setShow(!show);
   };
 
+   console.log(item.id,"teacher data im card")
   return (
     <div>
        
@@ -60,10 +64,10 @@ const InstructorCard = ({item}) => {
           )}
 
           {/* content */}
-          <div>
+          <Link to={`/teacher/${item.id}`}><div>
             <h4 className="text-xl font-bold mt-3"><a href="#">{item.name} </a></h4>
             <p>Teacher</p>
-          </div>
+          </div></Link>
         </div>
         
       </div>

@@ -21,16 +21,16 @@ const Contact = () => {
        </div>
       </div>
       <div className="flex justify-center items-center">
-        <div className="flex flex-col w-full gap-3 lg:flex-row bg-[#E8E8F4] md:w-[80%] min-h-[600px] my-[80px]  lg:gap-40 mx-auto">
+        <div className="flex flex-col w-full gap-3 lg:flex-row bg-[#E8E8F4] md:w-[80%] min-h-[600px] my-[80px]  lg:gap-40 mx-auto" data-aos="fade-up" data-aos-duration="1000">
           {/* left */}
           <div className="w-full md:w-[500px] px-3 h-[100%] mt-10 md:px-16 py-4 ">
-            <h1 className=" font-semibold text-xl">Get In Touch</h1>
-            <p className="mt-4">
+            <h1 className=" font-semibold text-xl" data-aos="fade-up" data-aos-duration="1000">Get In Touch</h1>
+            <p className="mt-4" data-aos="fade-up" data-aos-duration="1000">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
               veniam recusandae qui ad nesciunt commodi.
             </p>
         
-          <div className="bg-white w-full md:w-[450px] px-2 flex  flex-col  md:px-[60px] py-5  mt-[50px] rounded">
+          <div className="bg-white w-full md:w-[450px] px-2 flex  flex-col  md:px-[60px] py-5  mt-[50px] rounded" data-aos="fade-up" data-aos-duration="1000">
             <div>
                 <div className="flex gap-4">
             <div className='w-[50px] h-[50px] rounded-full bg-[#fe634024] flex justify-center items-center'><FontAwesomeIcon icon={faMapLocation} className="text-[#FE6440] left-4"/></div>
@@ -65,7 +65,7 @@ const Contact = () => {
             </div>
            
           </div>
-          <div className='mt-12 flex flex-col md:flex-row gap-4 mb-8 justify-between items-center'>
+          <div className='mt-12 flex flex-col md:flex-row gap-4 mb-8 justify-between items-center' data-aos="fade-up" data-aos-duration="1000">
             <div>
               <p>Customer Care</p>
             </div>
@@ -78,7 +78,7 @@ const Contact = () => {
         </div>
           </div>
           {/* right */}
-          <div className="w-[80%] mx-auto md:w-[500px] h-[100%] ">
+          <div className="w-[80%] mx-auto md:w-[500px] h-[100%] " data-aos="fade-up" data-aos-duration="1000">
            <div className="mt-20 flex flex-col w-[90%]"> 
             <label htmlFor="">Name</label>
             <input type="text" className="px-4 py-2 mt-2" placeholder="Name"/>

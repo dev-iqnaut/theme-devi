@@ -15,12 +15,12 @@ const Testimonials = () => {
        </div>
       </div>
       <div className="my-[80px]">
-        <h1 className="text-2xl md:text-3xl font-semibold text-center mt-[80px] mx-auto">
+        <h1 className="text-2xl md:text-3xl font-semibold text-center mt-[80px] mx-auto" data-aos="fade-up" data-aos-duration="1000">
           Creating a Community Of <br /> Life Long Learners
         </h1>
-        <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 mt-[50px] mx-auto md:w-[80%]">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 mt-[50px] mx-auto md:w-[80%]" data-aos="fade-up" data-aos-duration="1000">
           
-        <TestimonialCard/>
+        <TestimonialCard  />
           <TestimonialCard/>
           <TestimonialCard/>
           <TestimonialCard/>

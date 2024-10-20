@@ -66,6 +66,22 @@ const Navbar = () => {
                         className="hover:bg-gray-200 h-[35px] text-black"
                         onClick={() => setActive(false)}
                       >
+                        <Link to="/campus" className="px-5 ">
+                          Campus
+                        </Link>
+                      </li>
+                      <li
+                        className="hover:bg-gray-200 h-[35px] text-black"
+                        onClick={() => setActive(false)}
+                      >
+                        <Link to="/admissions" className="px-5 ">
+                         Admissions
+                        </Link>
+                      </li>
+                      <li
+                        className="hover:bg-gray-200 h-[35px] text-black"
+                        onClick={() => setActive(false)}
+                      >
                         <Link to="/event" className="px-5 ">
                           Event
                         </Link>
@@ -125,13 +141,13 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="px-4 py-1 rounded-full border border-transparent hover:border-[#795DD8] hover:text-[#795DD8] transition-all duration-200">
-                <Link to="/courses" className="hover:text-[#795DD8] ">
-                  Courses
+                <Link to="/academics" className="hover:text-[#795DD8] ">
+                 Academics
                 </Link>
               </li>
               <li className="px-4 py-1 rounded-full border border-transparent hover:border-[#795DD8] hover:text-[#795DD8] transition-all duration-200">
-                <Link to="/services" className="hover:text-[#795DD8] ">
-                  Services
+                <Link to="/courses" className="hover:text-[#795DD8] ">
+                Courses
                 </Link>
               </li>
               <li className="px-4 py-1 rounded-full border border-transparent hover:border-[#795DD8] hover:text-[#795DD8] transition-all duration-200">

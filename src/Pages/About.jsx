@@ -18,23 +18,33 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { siteContext } from "../context/SiteContextProvider";
 
-
 const About = () => {
   // const [data, setData] = useState([]);
-  const data=useContext(siteContext);
-  console.log(data["About-Us"].mission)
+  const data = useContext(siteContext);
+  console.log(data["About-Us"].mission);
   // slider
   const settings = {
     dots: false, // Show dots navigation
     infinite: true, // No infinite scrolling
     speed: 800, // Speed of transition
-    slidesToShow: 4, // Number of instructors to show at a time
+    slidesToShow: 6, // Number of instructors to show at a time
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 4000, // Scroll 1 instructor at a time
+    autoplaySpeed: 3000, // Scroll 1 instructor at a time
   };
 
+  //testimonial settings
+  const settingsTestimonial = {
+    dots: false, // Show dots navigation
+    infinite: true, // No infinite scrolling
+    speed: 800, // Speed of transition
+    slidesToShow: 3, // Number of instructors to show at a time
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000, // Scroll 1 instructor at a time
+  };
   // get mission and vision data from firestore db
   // const getData = async () => {
   //   try {
@@ -71,14 +81,14 @@ const About = () => {
         <div className="mt-[120px] lg:w-[80%] h-full relative flex flex-col lg:flex-row ">
           {/* leftside imge */}
           <div className="hidden w-[50%] h-full lg:grid grid-cols-2 space-y-28 gap-3 ">
-            <div>
+            <div data-aos="fade-up" data-aos-duration="1000">
               <img
                 src={img}
                 alt=""
                 className="w-[100%] h-[300px] object-cover"
               />
             </div>
-            <div>
+            <div data-aos="fade-up" data-aos-duration="1000">
               <img
                 src={img1}
                 alt=""
@@ -86,7 +96,7 @@ const About = () => {
               />
             </div>
           </div>
-          <div className="hidden lg:block w-[160px] h-[150px] bg-amber-50 absolute top-[-48px] left-[255px] border-2 border-gray-100">
+          <div className="hidden lg:block w-[160px] h-[150px] bg-amber-50 absolute top-[-48px] left-[255px] border-2 border-gray-100" data-aos="fade-up" data-aos-duration="1000">
             <div className="flex flex-col gap-3 justify-center items-center h-full">
               <div className="w-[70px] h-[70px] rounded-full bg-white relative border-2 border-orange-600">
                 <p className="absolute top-[23px] left-[20px]">35+</p>
@@ -96,16 +106,16 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="hidden lg:block w-[150px] h-[10px] bg-purple-400 absolute bottom-[50px] rounded-full"></div>
-          <div className="hidden lg:block w-[100px] h-[10px] bg-emerald-400 absolute bottom-[70px] rounded-full"></div>
+          <div className="hidden lg:block w-[150px] h-[10px] bg-purple-400 absolute bottom-[50px] rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
+          <div className="hidden lg:block w-[100px] h-[10px] bg-emerald-400 absolute bottom-[70px] rounded-full" data-aos="fade-up" data-aos-duration="1000"></div>
           {/* right side content */}
           <div className="w-[80%] lg:w-[70%] h-full md:px-24 mx-auto ">
             <div>
-              <h1 className="text-2xl font-semibold">
+              <h1 className="text-2xl font-semibold" data-aos="fade-up" data-aos-duration="1000">
                 Benefit From Our Online Learning Expertise Earn{" "}
-                <span className="text-orange-600">Professional</span>
+                <span className="text-orange-600" >Professional</span>
               </h1>
-              <p className="mt-5">
+              <p className="mt-5" data-aos="fade-up" data-aos-duration="1000">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Reprehenderit, numquam.
               </p>
@@ -113,8 +123,8 @@ const About = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2  mt-4 gap-4">
                   {/* mission */}
                   <div>
-                    <h3 className="font-semibold">Our Mission</h3>
-                    <p className="text-sm text-gray-700 mt-3">
+                    <h3 className="font-semibold" data-aos="fade-up" data-aos-duration="1000">Our Mission</h3>
+                    <p className="text-sm text-gray-700 mt-3" data-aos="fade-up" data-aos-duration="1000">
                       {data["About-Us"].mission}
 
                       {/* Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -124,8 +134,8 @@ const About = () => {
                   </div>
                   {/* vision */}
                   <div>
-                    <h3 className="font-semibold">Our Vision</h3>
-                    <p className="text-sm text-gray-700 mt-3">
+                    <h3 className="font-semibold" data-aos="fade-up" data-aos-duration="1000">Our Vision</h3>
+                    <p className="text-sm text-gray-700 mt-3" data-aos="fade-up" data-aos-duration="1000">
                       {data["About-Us"].vision}
                       {/* Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Magnam vitae asperiores quidem accusantium iste, optio
@@ -133,7 +143,7 @@ const About = () => {
                     </p>
                   </div>
                 </div>
-                <button className="px-3 py-2 text-white bg-[#FE6440] mt-6 rounded-full hover:scale-95 transition-all">
+                <button className="px-3 py-2 text-white bg-[#FE6440] mt-6 rounded-full hover:scale-95 transition-all" data-aos="fade-up" data-aos-duration="1000">
                   Admission Open
                 </button>
               </div>
@@ -141,7 +151,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="hidden lg:block bg-[#FE6440] mt-28 mx-auto rounded-full px-12 py-10 md:w-[70%] w-[50%]">
+      <div className="hidden lg:block bg-[#FE6440] mt-28 mx-auto rounded-full px-12 py-10 md:w-[70%] w-[50%]" data-aos="fade-up" data-aos-duration="1000">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/*  */}
           <div className="flex flex-col md:flex-row items-center gap-3">
@@ -200,37 +210,43 @@ const About = () => {
       </div>
       {/* testimonials */}
       <div className="w-[90%] mx-auto md:w-[80%]  mt-24 ">
-        <h3 className="text-xl md:text-2xl font-semibold text-center">
+        <h3 className="text-xl md:text-2xl font-semibold text-center" data-aos="fade-up" data-aos-duration="1000">
           Creating A Community Of <br />
           Lifelong Learners
         </h3>
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3 w-[100%]">
+        {/* <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3 w-[100%]"> */}
+        <div className="mt-8" data-aos="fade-up" data-aos-duration="1000">
+        <Slider {...settingsTestimonial}>
           <TestimonialCard />
           <TestimonialCard />
           <TestimonialCard />
+          </Slider>
+        {/* </div> */}
         </div>
       </div>
       {/* courses */}
-      <h3 className="mt-28 text-4xl md:text-3xl font-semibold text-center">
+      <h3 className="mt-28 text-4xl md:text-3xl font-semibold text-center" data-aos="fade-up" data-aos-duration="1000">
         Our Courses
       </h3>
 
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 mt-24 mx-auto lg:w-[70%] gap-y-8">
-        {courseData.slice(0, 4).map((course) => (
-          <CourseCard course={course} />
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 mt-24 mx-auto lg:w-[70%] gap-y-8" >
+        {courseData.slice(0, 4).map((course,i) => (
+         <div  data-aos="fade-up" data-aos-duration="1000" key={i}>
+           <CourseCard course={course} />
+         </div>
         ))}
       </div>
       {/* our Instructor */}
       <div className="bg-[#E8E8F4] w-full min-h-[550px] pt-20 mt-28">
-        <h3 className=" text-2xl md:text-3xl font-semibold text-center">
+        <h3 className=" text-2xl md:text-3xl font-semibold text-center" data-aos="fade-up" data-aos-duration="1000">
           Meet Our Instructor
         </h3>
-
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 w-[80%] lg:w-[60%] mx-auto gap-8 md:gap-0 "> 
-
-        {teacherData && 
-          // <Slider {...settings}>
-            teacherData.slice(0,4).map((item) => (
+<div className="mt-8 mx-auto w-[85%]" data-aos="fade-up" data-aos-duration="1000">
+        {/* <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 w-[80%] lg:w-[60%] mx-auto gap-8 md:gap-0 "> */}
+        <Slider {...settings}>
+          {teacherData &&
+           
+            teacherData.slice(0,6).map((item) => (
               <div
                 key={item.id}
                 className=" w-[202px] h-[242px] flex justify-center items-center rounded-sm"
@@ -238,24 +254,24 @@ const About = () => {
                 <InstructorCard item={item} />
               </div>
             ))}
-          {/* </Slider> */}
-        
-      </div>
-      <div className="md:mt-8 flex justify-center gap-5 py-6">
-        <div className="w-[60px] h-[60px] bg-orange-600 rounded-full relative cursor-pointer hover:scale-95  transition-all">
-          <FontAwesomeIcon
-            icon={faArrowLeft}
-            className="text-white absolute top-[20px] right-[24px]"
-          />
+          </Slider>
+          </div>
+        {/* </div> */}
+        <div className="md:mt-8 flex justify-center gap-5 py-6">
+          <div className="w-[60px] h-[60px] bg-orange-600 rounded-full relative cursor-pointer hover:scale-95  transition-all">
+            <FontAwesomeIcon
+              icon={faArrowLeft}
+              className="text-white absolute top-[20px] right-[24px]"
+            />
+          </div>
+          <div className="w-[60px] h-[60px] bg-orange-600 rounded-full relative cursor-pointer hover:scale-95 transition-all">
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              className="text-white absolute top-[20px] right-[24px]"
+            />
+          </div>
         </div>
-        <div className="w-[60px] h-[60px] bg-orange-600 rounded-full relative cursor-pointer hover:scale-95 transition-all">
-          <FontAwesomeIcon
-            icon={faArrowRight}
-            className="text-white absolute top-[20px] right-[24px]"
-          />
-        </div>
       </div>
-    </div>
     </div>
   );
 };

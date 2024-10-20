@@ -16,13 +16,13 @@ const Cart = () => {
       </div>
       <div className="w-full md:w-[80%] mx-auto my-[80px]">
         <div className="flex flex-col md:flex-row gap-20  justify-between">
-          <div className="w-[100%]">
+          <div className="w-[100%]" data-aos="fade-up" data-aos-duration="1000">
           
             <Table />
           </div>
           {/* total amount */}
 
-          <div className="w-full md:w-[30%]  bg-[#E8E8F4] p-4">
+          <div className="w-full md:w-[30%]  bg-[#E8E8F4] p-4" data-aos="fade-up" data-aos-duration="1000" >
             <h4 className="font-semibold mt-4 border-b border-gray-400 h-8">
               Cart Totals
             </h4>
@@ -60,7 +60,9 @@ const Cart = () => {
             </div>
           </div>
         </div>
-        <CouponCode />
+       <div data-aos="fade-up" data-aos-duration="1000">
+       <CouponCode />
+       </div>
       </div>
     </div>
   );

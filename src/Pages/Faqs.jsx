@@ -9,7 +9,7 @@ const Faqs = () => {
        <p className="text-xs sm:text-sm mt-5 font-medium">Home <span className="text-[#FE6440]">//</span> Faqs</p>
        </div>
             </div>
-           <div className='my-[80px] flex flex-col gap-3'>
+           <div className='my-[80px] flex flex-col gap-3' data-aos="fade-up" data-aos-duration="1000">
         <Accordion/>
         <Accordion/>
         <Accordion/>

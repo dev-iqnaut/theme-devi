@@ -13,7 +13,7 @@ const Event = () => {
             </div>
 
             {/* event card*/}
-            <div className='w-full md:w-[70%] mx-auto my-[80px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 '>
+            <div className='w-full md:w-[70%] mx-auto my-[80px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ' data-aos="fade-up" data-aos-duration="1000">
             <EventCard/>
             <EventCard/>
             <EventCard/>
@@ -23,7 +23,7 @@ const Event = () => {
             <EventCard/>
             </div>
            <div className='flex justify-center items-center mt-8 mb-[80px]'>
-           <div className='flex justify-between w-[180px] h-[50px] bg-[#7768E5] rounded-full '>
+           <div className='flex justify-between w-[180px] h-[50px] bg-[#7768E5] rounded-full ' data-aos="fade-up" data-aos-duration="1000">
             <button className='px-5 py-3  text-white'>Load More</button>
             <div className='w-12 h-12 bg-[#795DD8] shadow-md rounded-full flex justify-center items-center'><Arrow/></div>
             </div>
