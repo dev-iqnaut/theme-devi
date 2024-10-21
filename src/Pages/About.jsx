@@ -17,6 +17,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { siteContext } from "../context/SiteContextProvider";
+import { Link } from "react-router-dom";
 
 const About = () => {
   // const [data, setData] = useState([]);
@@ -125,7 +126,7 @@ const About = () => {
                   <div>
                     <h3 className="font-semibold" data-aos="fade-up" data-aos-duration="1000">Our Mission</h3>
                     <p className="text-sm text-gray-700 mt-3" data-aos="fade-up" data-aos-duration="1000">
-                      {data["About-Us"].mission}
+                      {data&&data["About-Us"].mission}
 
                       {/* Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Eos sint et dolor possimus voluptatem exercitationem id
@@ -144,7 +145,7 @@ const About = () => {
                   </div>
                 </div>
                 <button className="px-3 py-2 text-white bg-[#FE6440] mt-6 rounded-full hover:scale-95 transition-all" data-aos="fade-up" data-aos-duration="1000">
-                  Admission Open
+                 <Link to='/admissions'> Admission Open</Link>
                 </button>
               </div>
             </div>

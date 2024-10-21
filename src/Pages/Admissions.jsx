@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import KinderGarten from "../components/admissions/KinderGarten";
-import { useNavigation } from "react-router-dom";
 import PrimaryLevel from "../components/admissions/PrimaryLevel";
 import SecondaryLevel from "../components/admissions/SecondarLevel";
 import HigherSecondary from "../components/admissions/HigherSecondary";
+import { siteContext } from "../context/SiteContextProvider";
 
 const Admissions = () => {
     const[showKinder,setShowKinder]=useState(true);
@@ -11,6 +11,8 @@ const Admissions = () => {
     const[showSecondary,setShowSecondary]=useState(false);
     const[showHigher,setShowHigher]=useState(false);
 
+     const data=useContext(siteContext);
+     console.log(data,"admission page")
  //show kindegarten
  const handleKinder=()=>{
     setShowKinder(true)
@@ -115,7 +117,12 @@ const handleHigher=()=>{
               </li>
             </ul>
           </div>
+          <div>
+          <h3 className="mt-8 text-2xl font-semibold">CBSC Compliance</h3>
+          <p className="mt-5 text-sm text-gray-700"> We follow specific standards, rules, and regulations set by the CBSE, a prominent educational board in India. CBSE compliance ensures that affiliated schools provide a uniform, high-quality educational environment</p>
         </div>
+        </div>
+        
       </div>
     </>
   );
