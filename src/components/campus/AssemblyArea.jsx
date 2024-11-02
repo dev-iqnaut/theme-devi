@@ -3,13 +3,16 @@ import { siteContext } from '../../context/SiteContextProvider'
 
 const AssemblyArea = () => {
     const data=useContext(siteContext);
-console.log("area",data.Infrastructure)
+    const assemblyAreaPic=data?.infrastructure?.assemblyArea;
+    console.log(assemblyAreaPic)
+
   return (
    <>
-    <div className="w-[240px] h-[180px]">
-                <img src=""
-            alt="" className="w-[100%] h-[100%] object-cover" />
-            </div>
+    {assemblyAreaPic?.map((pic,i)=>
+    <div className="w-[240px] h-[180px] mt-14 " key={i}>
+    <img src={pic.url} alt={i} className="w-[100%] h-[100%] object-cover rounded-xl" />
+</div>
+)}
    </>
   )
 }

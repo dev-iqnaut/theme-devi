@@ -90,6 +90,14 @@ const Navbar = () => {
                         className="hover:bg-gray-200 h-[35px] text-black"
                         onClick={() => setActive(false)}
                       >
+                        <Link to="/blog" className="px-5 ">
+                          Blog
+                        </Link>
+                      </li>
+                      <li
+                        className="hover:bg-gray-200 h-[35px] text-black"
+                        onClick={() => setActive(false)}
+                      >
                         <Link to="/faqs" className="px-5">
                           Faqs
                         </Link>

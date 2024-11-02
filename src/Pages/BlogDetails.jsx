@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import img1 from "../assets/blog/img1.jpg";
 import Facebook from "../components/common/Facebook";
 import Twitter from "../components/common/Twitter";
@@ -12,7 +12,11 @@ import Calendar from "../components/common/Calendar";
 import Message from "../components/common/Message";
 import Skype from "../components/common/Skype";
 import Search from "../components/common/Search";
+import { useParams } from "react-router-dom";
 const BlogDetails = () => {
+  const {id}=useParams();
+  console.log("blog details page",id)
+
   return (
     <div>
       <div className="text-6xl bg-gradient-to-r from-[#EBD6DB] to-[#DCDAF2] h-[300px] flex items-center justify-center font-bold">

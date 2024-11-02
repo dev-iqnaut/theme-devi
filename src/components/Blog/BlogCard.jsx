@@ -23,7 +23,7 @@ const BlogCard = () => {
                 <p className='text-sm font-medium'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores <br />perferendis architecto corporis? Eos, similique?</p>
             </div>
             <div className="flex justify-start items-center mt-5">
-          <div className="flex justify-between w-[170px] h-[50px] bg-[#E9E2FE] rounded-full font-medium hover:bg-[#795DD8] hover:text-white transition-all duration-200">
+          <div className="flex justify-between w-[170px] h-[50px] bg-[#E9E2FE] rounded-full font-medium  transition-all duration-200">
             <button className="px-5 py-3  text-[#795DD8] text-sm " ><Link to='/blog/details'>Read More</Link></button>
             <div className="w-12 h-12 bg-[#E9E2FE] shadow-md rounded-full flex justify-center items-center text-[#795DD8] ">
               <Arrow />

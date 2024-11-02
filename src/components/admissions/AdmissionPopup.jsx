@@ -11,7 +11,7 @@ const AdmissionPopup = ({setOpen}) => {
       <div className='w-[500px] h-[320px] bg-white shadow-sm p-4 relative'>
          <h2 className='text-2xl text-green-500 font-semibold text-center'>ADMISSION OPEN NOW</h2>
          <div onClick={handleClose} className='absolute top-5 right-5 text-white cursor-pointer flex justify-center items-center text-xl font-bold bg-red-600 px-4 py-2 rounded-full w-[30px] h-[30px]
-         hover:scale-110 transition-all duration-200'>
+         hover:bg-red-700 hover:rotate-180 transition-all duration-200'>
             x</div>
         <h4 className='text-xl font-semibold mt-4 text-center'>Edunity cbsc school</h4>
         <div className='flex gap-7'>

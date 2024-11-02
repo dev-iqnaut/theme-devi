@@ -59,14 +59,14 @@ const App = () => {
         <Route path='/services/details' element={<ServiceDetails/>}></Route>
         <Route path='/courses' element={<Course courseData={courseData}/>}></Route>
         <Route path='/courses/details' element={<CourseDetails/>}></Route>
-        <Route path='/event/details/:id' element={<EventDetails/>}></Route>
+        <Route path='/event/:id' element={<EventDetails/>}></Route>
         <Route path='/gallery' element={<GalleryPage/>}></Route>
         <Route path='/blog' element={<Blog/>}></Route>
         <Route path='/campus' element={<Campus/>}></Route>
         <Route path='/pricingtable' element={<PricingTable/>}></Route>
         <Route path='/educationshop' element={<EducationShop/>}></Route>
         <Route path='/checkout' element={<CheckOut/>}></Route>
-        <Route path='/blog/details' element={<BlogDetails/>}></Route>
+        <Route path='/blog/:id' element={<BlogDetails/>}></Route>
         <Route path='/teacher' element={<Teacher />}></Route>
         <Route path='/teacher/:id' element={<TeacherDetails/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>

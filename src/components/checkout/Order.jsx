@@ -1,5 +1,6 @@
 import React from "react";
 import img from "../../assets/shop/book.jpg";
+import { Link } from "react-router-dom";
 const Order = () => {
   return (
     <div>
@@ -97,7 +98,7 @@ const Order = () => {
           </div>
           <div className="mt-6 flex justify-center items-center ">
             <button className=" px-5 md:px-24 py-2 text-white bg-[#795DD8] rounded-sm">
-              Place an Order
+             <Link to='/pagenotfound'> Place an Order</Link>
             </button>
           </div>
         </div>

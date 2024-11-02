@@ -84,9 +84,11 @@ const handleHigher=()=>{
         <div className="mt-8">
           <h2 className="font-semibold text-3xl text-blue-900">Document List</h2>
           <div className="flex gap-5 items-center my-6">
-          <div>1.data1</div>
-          <div>2.data2</div>
-          <div>3.data3</div>
+            {data?.admissions?.documentList.map((item,i)=>
+            <div>{item}</div>
+            )}
+          
+       
           </div>
         </div>
           <h1 className="font-semibold text-3xl text-blue-900">Fee Structure</h1>
@@ -117,10 +119,7 @@ const handleHigher=()=>{
               </li>
             </ul>
           </div>
-          <div>
-          <h3 className="mt-8 text-2xl font-semibold">CBSC Compliance</h3>
-          <p className="mt-5 text-sm text-gray-700"> We follow specific standards, rules, and regulations set by the CBSE, a prominent educational board in India. CBSE compliance ensures that affiliated schools provide a uniform, high-quality educational environment</p>
-        </div>
+         
         </div>
         
       </div>

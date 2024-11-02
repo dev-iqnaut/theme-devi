@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext,  useState } from "react";
 
 import GalleryCard from "../components/gallery/GalleryCard";
 import { siteContext } from "../context/SiteContextProvider";
+
 const GalleryPage = () => {
+ 
  const data=useContext(siteContext)
 
   return (
@@ -17,7 +19,7 @@ const GalleryPage = () => {
       </div>
       <div className="w-full lg:w-[80%] mx-auto my-[80px] ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-12 ">
-          {data?.Gallery?.images.map((img,i)=>
+          {data?.gallery?.images.map((img,i)=>
             ( 
               <GalleryCard img={img} key={i}/>
             )

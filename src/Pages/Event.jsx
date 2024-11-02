@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import EventCard from '../components/Events/EventCard'
 import Arrow from '../components/common/Arrow'
+import { siteContext } from '../context/SiteContextProvider'
 
 const Event = () => {
+  const data=useContext(siteContext);
+  console.log("event page",data.newsEvents)
   return (
     <div>
          <div className="text-6xl bg-gradient-to-r from-[#EBD6DB] to-[#DCDAF2] h-[300px] flex items-center justify-center  font-bold w-[100%]">
@@ -13,7 +16,7 @@ const Event = () => {
             </div>
 
             {/* event card*/}
-            <div className='w-full md:w-[70%] mx-auto my-[80px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ' data-aos="fade-up" data-aos-duration="1000">
+            <div className='w-full md:w-[80%] mx-auto my-[80px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ' data-aos="fade-up" data-aos-duration="1000">
             <EventCard/>
             <EventCard/>
             <EventCard/>

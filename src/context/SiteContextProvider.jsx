@@ -1,4 +1,4 @@
-import { collection, getDocs } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import React, { createContext, useEffect, useState } from 'react'
 import db from '../config/firebase';
 
@@ -10,20 +10,26 @@ const SiteContextProvider = ({children}) => {
  
    const[data,setData]=useState([]);
 
-   const getData=async()=>{
-    try{
-  const res=(await getDocs(collection(db,"sites"))).docs.map((doc)=>({
-    ...doc.data()
-  }))
-  setData(res[0].siteData)
-    }catch(e){
-        console.error(e)
+   const getData = async () => {
+    try {
+      const docRef = doc(db, 'sites','www.edunity.com');
+      console.log(docRef) // Replace with your document ID
+      const docSnap = await getDoc(docRef);
+      console.log(docSnap.data())
+
+      if (docSnap.exists()) {
+        setData(docSnap.data().siteData); // Access the `siteData` field inside the document
+      } else {
+        console.log('No such document!');
+      }
+    } catch (e) {
+      console.error(e);
     }
-   }
-  
-   useEffect(()=>{
-  getData()
-   },[])
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
 
   return (

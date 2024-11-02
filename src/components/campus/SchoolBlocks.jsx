@@ -4,13 +4,13 @@ import { siteContext } from '../../context/SiteContextProvider'
 const SchoolBlocks = () => {
     const data=useContext(siteContext)
     
-    const desData=data?.Infrastructure?.school_blocks;
+    const desData=data?.infrastructure?.schoolBlocks;
 
   return (
    <>
  { desData?.map((item)=>
     <div key={item.id} className='w-[240px] h-[180px] mt-14'>
-      <img src={item} alt="" className='w-[100%] h-[100%] object-cover' />
+      <img src={item.url} alt="" className='w-[100%] h-[100%] object-cover rounded-xl' />
 </div>)
    }
    

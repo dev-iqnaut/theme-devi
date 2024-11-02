@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Hero from "../components/Hero/Hero";
 import CategoryCard from "../components/Home/CategoryCard";
 import img1 from "../assets/blog/img5.jpg";
@@ -19,7 +19,7 @@ import video from "../assets/video/home.mp4";
 import DiscoverCard from "../components/Home/DiscoverCard";
 import BlogCard from "../components/Blog/BlogCard";
 import Arrow from "../components/common/Arrow";
-import teacherData from "../sampleData/TeacherData";
+
 import Gear from "../components/common/Gear";
 import Art from "../components/common/Art";
 import Medal from "../components/common/Medal";
@@ -34,6 +34,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AdmissionPopup from "../components/admissions/AdmissionPopup";
+import { siteContext } from "../context/SiteContextProvider";
 export const categoryData = [
   {
     id: 1,
@@ -100,36 +101,56 @@ export const categoryData = [
   },
 ];
 
-let settings = {
-  dots: false,
-  arrows: false,
-  infinite: true,
-  speed: 800,
+const settings = {
+  dots: true, // Show dots navigation
+  infinite: true, // No infinite scrolling
+  speed: 800, // Speed of transition
+  slidesToShow: 1, // Number of instructors to show at a time
   slidesToScroll: 1,
-  autoPlay: true,
-  autoPlaySpeed: 1000,
-  cssEase: "ease-in-out",
-  pauseOnHover: false,
+  arrows: false,
+  autoplay: true,
+  autoplaySpeed: 3000, // Scroll 1 instructor at a time
 };
 
 const Home = () => {
   const [open, setOpen] = useState(true);
-
+  const data=useContext(siteContext);
   console.log(courseData);
-
+   console.log("carousel",data?.home?.carousel)
   // display only first 4 instructors
-  const instructorFilter = teacherData.slice(0, 4);
+  const instructorFilter = data.facultyStaff;
   return (
     <div>
       {open && <AdmissionPopup setOpen={setOpen} />}
-      <Hero />
+     <Slider {...settings}>
+        <div>
+          <Hero />
+        </div>
+        {data?.home?.carousel.map((item, i) => (
+          <div key={i} className="w-full md:h-[500px]  relative h-[420px]">
+            <div className="w-[100%] h-[100%]">
+              <img
+                src={item.image}
+                alt=""
+                className="w-[100%] h-[100%] object-cover opacity-90"
+              />
+            </div>
+           <div className="absolute top-[120px] left-[120px]">
+           <p className="text-3xl md:text-4xl  text-white font-bold md:w-[400px] w-full ">
+             {item.title}
+            </p>
+            <button className="text-md bg-[#18254F] text-white rounded-full px-5 py-3 md:mt-8 mt-4"><Link to={`${item.buttonUrl}`}>{item.buttonText}</Link></button>
+           </div>
+          </div>
+        ))}
+      </Slider>
       {/* categories */}
       <div className="w-full">
         <h3 className="mt-24 text-3xl font-semibold text-center " data-aos="fade-up" data-aos-duration="1000">
           Browse By Categories
         </h3>
         <div className="w-[80%] md:w-[80%] lg:w-[66%] mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-8"
-        data-aos="fade-up" data-aos-duration="1000">
+        data-aos="zoom-out" data-aos-duration="1000">
           {categoryData.map((item) => (
             <CategoryCard item={item} key={item.id} />
           ))}
@@ -318,7 +339,7 @@ const Home = () => {
         </div>
       </div>
       {/* details card */}
-      <div className="hidden lg:block bg-[#FFD25D] mt-28 mx-60 rounded-full px-12 py-10 absolute top-[555%] z-10 " data-aos="zoom-out" data-aos-duration="1000">
+      <div className="hidden xl:block bg-[#FFD25D] mt-28 mx-60 rounded-full px-12 py-10 absolute top-[555%] z-10 " data-aos="zoom-out" data-aos-duration="1000">
         <div className=" flex items-center gap-12">
           {/*  */}
           <div className="flex items-center gap-3">
@@ -447,8 +468,8 @@ const Home = () => {
           {/* right image */}
           <div className="w-[50%] px-12 md:mt-12 lg:mt-0">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-12 md:gap-x-72 lg:gap-x-0">
-              {teacherData &&
-                instructorFilter.map((item) => (
+              {instructorFilter &&
+                instructorFilter.facultyPicture.slice(0,4).map((item) => (
                   <div
                     className="border-2 border-blue-700 w-[202px] h-[242px] flex justify-center items-center rounded-sm"
                     key={item.id} data-aos="fade-up" data-aos-duration="1000"

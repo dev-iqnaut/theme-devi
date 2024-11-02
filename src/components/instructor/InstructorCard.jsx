@@ -4,7 +4,7 @@ import ShareIcon from "../common/ShareIcon";
 import Facebook from "../common/Facebook";
 import Instagram from "../common/Instagram";
 import LinkedIn from "../common/LinkedIn";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -18,7 +18,7 @@ const InstructorCard = ({item}) => {
     setShow(!show);
   };
 
-   console.log(item.id,"teacher data im card")
+   
   return (
     <div>
        
@@ -30,7 +30,7 @@ const InstructorCard = ({item}) => {
           {/* image */}
           <div className="w-[180px] h-[160px]">
             <img
-              src={item.img}
+              src={item.url}
               alt=""
               className="w-[100%] h-[100%] object-cover"
             />

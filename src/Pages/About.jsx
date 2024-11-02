@@ -9,10 +9,9 @@ import TestimonialCard from "../components/Testimonials/TestimonialCard";
 import CourseCard from "../components/Course/CourseCard";
 import InstructorCard from "../components/instructor/InstructorCard";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import teacherData from "../sampleData/TeacherData";
+
 import courseData from "../sampleData/CourseData";
-import { getDocs, collection } from "firebase/firestore";
-import db from "../config/firebase";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -22,7 +21,8 @@ import { Link } from "react-router-dom";
 const About = () => {
   // const [data, setData] = useState([]);
   const data = useContext(siteContext);
-  console.log(data["About-Us"].mission);
+  console.log(data,"about us data")
+  // console.log(data.AboutUs.principal_message);
   // slider
   const settings = {
     dots: false, // Show dots navigation
@@ -46,6 +46,37 @@ const About = () => {
     autoplay: true,
     autoplaySpeed: 2000, // Scroll 1 instructor at a time
   };
+//responsive slider
+  const responsive = [
+    {
+      breakpoint: 1024,
+      settings: { slidesToShow: 3, slidesToScroll: 1, infinite: true },
+    },
+    {
+      breakpoint: 600,
+      settings: { slidesToShow: 2, slidesToScroll: 1 },
+    },
+    {
+      breakpoint: 480,
+      settings: { slidesToShow: 1, slidesToScroll: 1 },
+    },
+  ];
+
+  const responsiveTestimomnial = [
+    {
+      breakpoint: 1440,
+      settings: { slidesToShow: 3, slidesToScroll: 1, infinite: true },
+    },
+    {
+      breakpoint: 1024,
+      settings: { slidesToShow: 2, slidesToScroll: 1 },
+    },
+    {
+      breakpoint: 780,
+      settings: { slidesToShow: 1, slidesToScroll: 1 },
+    },
+  ];
+
   // get mission and vision data from firestore db
   // const getData = async () => {
   //   try {
@@ -91,7 +122,7 @@ const About = () => {
             </div>
             <div data-aos="fade-up" data-aos-duration="1000">
               <img
-                src={img1}
+                src={data.aboutUs?.principalMessage?.principalImage}
                 alt=""
                 className="w-[100%] h-[300px] object-cover"
               />
@@ -125,19 +156,16 @@ const About = () => {
                   {/* mission */}
                   <div>
                     <h3 className="font-semibold" data-aos="fade-up" data-aos-duration="1000">Our Mission</h3>
-                    <p className="text-sm text-gray-700 mt-3" data-aos="fade-up" data-aos-duration="1000">
-                      {data&&data["About-Us"].mission}
+                  <p className="text-sm text-gray-700 mt-3" data-aos="fade-up" data-aos-duration="1000">
+                     {data&&data.aboutUs?.mission}
 
-                      {/* Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Eos sint et dolor possimus voluptatem exercitationem id
-                      nesciunt repellat nemo cum. */}
                     </p>
                   </div>
                   {/* vision */}
                   <div>
                     <h3 className="font-semibold" data-aos="fade-up" data-aos-duration="1000">Our Vision</h3>
                     <p className="text-sm text-gray-700 mt-3" data-aos="fade-up" data-aos-duration="1000">
-                      {data["About-Us"].vision}
+                    {data&&data.aboutUs?.vision}
                       {/* Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Magnam vitae asperiores quidem accusantium iste, optio
                       dignissimos soluta doloribus! Assumenda, rem. */}
@@ -217,7 +245,7 @@ const About = () => {
         </h3>
         {/* <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3 w-[100%]"> */}
         <div className="mt-8" data-aos="fade-up" data-aos-duration="1000">
-        <Slider {...settingsTestimonial}>
+        <Slider {...settingsTestimonial} responsive={responsiveTestimomnial}>
           <TestimonialCard />
           <TestimonialCard />
           <TestimonialCard />
@@ -244,10 +272,10 @@ const About = () => {
         </h3>
 <div className="mt-8 mx-auto w-[85%]" data-aos="fade-up" data-aos-duration="1000">
         {/* <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 w-[80%] lg:w-[60%] mx-auto gap-8 md:gap-0 "> */}
-        <Slider {...settings}>
-          {teacherData &&
+        <Slider {...settings} responsive={responsive}>
+          {data &&
            
-            teacherData.slice(0,6).map((item) => (
+            data.facultyStaff?.facultyPicture.slice(0,6).map((item) => (
               <div
                 key={item.id}
                 className=" w-[202px] h-[242px] flex justify-center items-center rounded-sm"

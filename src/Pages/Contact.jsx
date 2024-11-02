@@ -11,7 +11,10 @@ import { Link } from "react-router-dom";
 
 const Contact = () => {
   const data=useContext(siteContext)
-  console.log(data.ContactUs)
+  console.log("contact page",data.contactUs)
+  console.log(data.contactUs?.facebookLink)
+  console.log(data.contactUs?.twitterLink)
+  console.log(data.contactUs?.linkedInLink)
   return (
     <div>
       <div className="text-6xl bg-gradient-to-r from-[#EBD6DB] to-[#DCDAF2] h-[300px] flex items-center justify-center  font-bold ">
@@ -38,7 +41,7 @@ const Contact = () => {
               <p className="text-gray-400">Our Address</p>
               <h4 className="font-bold text-lg mt-1">
                 1564 Goosetown Drive <br />
-                {/* Matthews,NC 28105 */}{data?.ContactUs?.location}
+                {/* Matthews,NC 28105 */}{data?.contactUs?.location}
               </h4>
               </div>
               </div>
@@ -49,7 +52,7 @@ const Contact = () => {
                 <div>
               <p className="text-gray-400">Hours Of Operation</p>
               <h4 className="font-bold text-lg mt-1">
-                Mon-Fri:{data?.ContactUs?.opening_hours}am to 5:00pm
+                Mon-Fri:{data?.contactUs?.openingHours}am to 5:00pm
               </h4>
               <p className="text-gray-400">[2nd sat Holiday]</p>
               </div>
@@ -59,7 +62,7 @@ const Contact = () => {
             <div>
               <p className="text-gray-400">Contact</p>
               <h4 className="font-bold text-lg mt-1">
-               {data?.ContactUs?.phone_number} <br /> {data?.ContactUs?.email}
+               {data?.contactUs?.phoneNumber} <br /> {data?.contactUs?.email}
               </h4>
               </div>
             </div>
@@ -70,10 +73,10 @@ const Contact = () => {
               <p>Customer Care</p>
             </div>
             <div className="flex gap-2">
-        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><div className="text-xl text-orange-500"><Link to={data?.ContactUs?.facebook_link}><Facebook/></Link></div></div>
-        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><div className="text-xl text-orange-500"><Link to={data?.ContactUs?.linkedin_link}><LinkedIn/></Link></div></div>
-        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><div className="text-xl text-orange-500"><Link to={data?.ContactUs?.twitter_link}><Twitter/></Link></div></div>
-        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><div className="text-xl text-orange-500"><Link to={data?.ContactUs?.facebook_link}><Whatsapp/></Link></div></div>
+        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><div className="text-xl text-orange-500"><Link to={data?.contactUs?.facebookLink}><Facebook/></Link></div></div>
+        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><div className="text-xl text-orange-500"><Link to={data?.contactUs?.linkedInLink}><LinkedIn/></Link></div></div>
+        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><div className="text-xl text-orange-500"><Link to={data?.contactUs?.twitterLink}><Twitter/></Link></div></div>
+        <div className='w-[40px] h-[40px] rounded-full bg-white flex justify-center items-center'><div className="text-xl text-orange-500"><Link to={data?.contactUs?.WhatsappLink}><Whatsapp/></Link></div></div>
         </div>
         </div>
           </div>

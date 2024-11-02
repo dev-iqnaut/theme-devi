@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import InstructorCard from "../components/instructor/InstructorCard";
-import teacherData from "../sampleData/TeacherData";
+
+import { siteContext } from "../context/SiteContextProvider";
+
 
 const Teacher = () => {
-  console.log("teacher",teacherData)
+  const data=useContext(siteContext);
+  const facultyData=data?.facultyStaff;
+  console.log(facultyData)
+ 
   return (
     <div>
       <div className="text-6xl bg-gradient-to-r from-[#EBD6DB] to-[#DCDAF2] h-[300px] flex items-center justify-center  font-bold ">
@@ -19,7 +24,7 @@ const Teacher = () => {
         </h1>
         <div className="mx-auto mt-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {teacherData && teacherData.map((item)=>
+          {facultyData && facultyData.facultyPicture.map((item)=>
          <div key={item.id} data-aos="fade-up" data-aos-duration="1000">
 
           <InstructorCard item={item}/>

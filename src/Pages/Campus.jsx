@@ -31,23 +31,23 @@ const Campus = () => {
           {/* art rooms */}
           <div>
             <h4 className="font-semibold text-2xl mb-5">Art Rooms</h4>
-            <ArtRooms/>
+           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"> <ArtRooms/></div>
           </div>
           {/* assembly area */}
           <div>
           <h4 className="font-semibold text-2xl mb-5">Assembly Area</h4>
-          <AssemblyArea/>
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"> <AssemblyArea/></div>
           </div>
        
         {/*auditorium*/}
         <div>
             <h4 className="font-semibold text-2xl mb-5">Auditorium</h4>
-            <Auditorium/>
+           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"> <Auditorium/></div>
           </div>
           {/* clinic */}
           <div> 
             <h4 className="font-semibold text-2xl mb-5">Clinic</h4>
-            <Clinic/>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  "><Clinic/></div>
           </div>
           {/*hostels  */}
           <div className="">

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import img from "../assets/blog/img4.jpg";
+import React, { useContext, useEffect, useState } from "react";
 import Facebook from "../components/common/Facebook";
 import Instagram from "../components/common/Instagram";
 import LinkedIn from "../components/common/LinkedIn";
@@ -11,24 +10,31 @@ import InstructorCard from "../components/instructor/InstructorCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
-import teacherData from "../sampleData/TeacherData";
+
+import { siteContext } from "../context/SiteContextProvider";
+
 const TeacherDetails = () => {
   const {id} = useParams();
+  
   const[selectedData,setSelectedData]=useState({});
   console.log("details", id);
-  
+  const fdata=useContext(siteContext)
+  const facultyData=fdata?.facultyStaff;
+console.log(facultyData,"teacherdetails")
+
   const getSelectedData=(id)=>{
-    const data=teacherData.find((item)=>
-    item.id===Number(id))
-   if(data){
-    setSelectedData(data)
-   }
+    if (facultyData && facultyData.facultyPicture) {
+      const data = facultyData.facultyPicture.find((pic) => Number(pic.id) === Number(id));
+      if (data) {
+        setSelectedData(data);
+      }
+    }
    
   }
  
   useEffect(()=>{
      getSelectedData(id)
-  },[id])
+  },[id,facultyData])
   console.log(selectedData,"getid")
   return (
     
@@ -53,7 +59,7 @@ const TeacherDetails = () => {
             <div className="p-[30px]">
               <div className="w-[100%] h-[180px]">
                 <img
-                  src={selectedData.img}
+                  src={selectedData.url}
                   alt=""
                   className="w-[100%] h-[100%] object-cover"
                 />
@@ -177,7 +183,7 @@ const TeacherDetails = () => {
             Meet Our Instructor
           </h1>
           <div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mx-auto mt-[50px]">
-          {teacherData?.slice(0,4).map((item)=>
+          {facultyData?.facultyPicture?.slice(0,4).map((item)=>
           <div key={item.id} data-aos="fade-up" data-aos-duration="1000">
             <InstructorCard item={item}/>
             

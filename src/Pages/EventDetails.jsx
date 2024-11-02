@@ -9,7 +9,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faBook } from "@fortawesome/free-solid-svg-icons/faBook";
 import Arrow from "../components/common/Arrow";
+import { useParams } from "react-router-dom";
 const EventDetails = () => {
+  const {id} =useParams();
   return (
     <div>
       <div className="text-6xl bg-gradient-to-r from-[#EBD6DB] to-[#DCDAF2] h-[300px] flex items-center justify-center  font-bold  w-[100%]">

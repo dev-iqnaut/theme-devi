@@ -28,6 +28,21 @@ const Responsive = ({
                 </Link>
               </li>
               <li className="hover:bg-gray-100">
+                <Link to="/campus" onClick={() => setSideBarOpen(false)}>
+                  Campus
+                </Link>
+              </li>
+              <li className="hover:bg-gray-100">
+                <Link to="/admissions" onClick={() => setSideBarOpen(false)}>
+                  Admissions
+                </Link>
+              </li>
+              <li className="hover:bg-gray-100">
+                <Link to="/faqs" onClick={() => setSideBarOpen(false)}>
+                  faqs
+                </Link>
+              </li>
+              <li className="hover:bg-gray-100">
                 <Link to="/testimonial" onClick={() => setSideBarOpen(false)}>
                   testimonial
                 </Link>
@@ -62,18 +77,18 @@ const Responsive = ({
           )}
         </li>
         <li className="hover:bg-gray-100">
+          <Link to="/academics" onClick={() => setSideBarOpen(false)}>
+            Academics
+          </Link>
+        </li>
+        <li className="hover:bg-gray-100">
           <Link to="/courses" onClick={() => setSideBarOpen(false)}>
             Courses
           </Link>
         </li>
         <li className="hover:bg-gray-100">
-          <Link to="/services" onClick={() => setSideBarOpen(false)}>
-            Services
-          </Link>
-        </li>
-        <li className="hover:bg-gray-100">
-          <Link to="/blog" onClick={() => setSideBarOpen(false)}>
-            blog
+          <Link to="/gallery" onClick={() => setSideBarOpen(false)}>
+            Gallery
           </Link>
         </li>
         <li className="hover:bg-gray-100">
