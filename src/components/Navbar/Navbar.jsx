@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import DownArrow from "../common/DownArrow";
 import RightArrow from "../common/RightArrow";
@@ -11,9 +11,11 @@ import Arrow from "../common/Arrow";
 import Cart from "../common/Cart";
 import Shop from "../common/Shop";
 import Responsive from "./Responsive";
+import { siteContext } from "../../context/SiteContextProvider";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import {faRightArrow} from "@fortawesome/free-solid-svg-icons"
 const Navbar = () => {
+  const data=useContext(siteContext)
   const [active, setActive] = useState(false);
   const [submenuActive, setSubmenuActive] = useState(false);
   const [sidebarOpen, setSideBarOpen] = useState(false);
@@ -27,11 +29,11 @@ const Navbar = () => {
       <div className="flex shadow z-40  w-[100%] bg-white h-[90px]  justity-between items-center">
         <div className="w-[100%] lg:w-[90%] mx-auto flex justify-between items-center">
           {/* logo */}
-          <div className="font-medium text-3xl flex gap-2 px-4 lg:px-0">
-            <div className="text-[#795DD8]">
-              <LogoIcon />
+          <div className="font-medium text-3xl flex gap-2 px-4 lg:px-0 justify-center items-center">
+            <div className=" w-[60px] h-[60px]">
+             <img src={data?.home?.schoolDetails?.schoolLogo} alt="" className="w-[100%] h-[100%] object-cover text-[#795DD8]" />
             </div>
-            <h1>edunity</h1>
+            <h1>{data?.home?.schoolDetails?.schoolName}</h1>
           </div>
           {/* menu */}
           <div className="hidden lg:block">

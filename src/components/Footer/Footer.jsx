@@ -33,9 +33,9 @@ const Footer = () => {
         <div className="flex flex-col gap-5 md:flex-row justify-around mx-auto w-[80%] lg:gap-10 mt-20 ">
           <div>
             <div className="flex gap-2">
-              <div className="text-3xl">
+              <div className="w-[60px] h-[60px] ">
                 
-                <LogoIcon />
+               <img src={data?.home?.schoolDetails?.schoolLogo} alt="" className="w-[100%] h-[100%] object-cover bg-black"/>
               </div>
               <h1 className="text-4xl font-semi-bold">edunity</h1>
             </div>
@@ -124,7 +124,7 @@ const Footer = () => {
       <div className="bg-[#202020] w-full h-[50px] flex text-white  items-center gap-32  ">
        <div className="w-[80%] mx-auto flex justify-between gap-5 md:gap-0">
        <p className="text-xs md:text-sm text-white ">
-          Copyright @2024 <span className="text-[#FE6440]">edunity</span> || All
+          Copyright @2024 <span className="text-[#FE6440]">{data?.home?.schoolDetails.schoolName}</span> || All
           Rights Reserved
         </p>
         <p className="text-xs md:text-sm text-white ">
