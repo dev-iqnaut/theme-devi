@@ -47,6 +47,14 @@ const Responsive = ({
                   testimonial
                 </Link>
               </li>
+              <li
+                        className="hover:bg-gray-200 h-[35px] text-black"
+                        onClick={() => setActive(false)}
+                      >
+                        <Link to="/pricingtable" className="px-5">
+                          Pricing Table
+                        </Link>
+                      </li>
               <li className="hover:bg-gray-100">
                 <Link to="/event" onClick={() => setSideBarOpen(false)}>
                   event

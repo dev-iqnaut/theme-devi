@@ -113,6 +113,14 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li
+                        className="hover:bg-gray-200 h-[35px] text-black"
+                        onClick={() => setActive(false)}
+                      >
+                        <Link to="/pricingtable" className="px-5">
+                          Pricing Table
+                        </Link>
+                      </li>
+                      <li
                         className="hover:bg-gray-200 h-[35px] relative text-black"
                         onMouseEnter={() => setSubmenuActive(true)}
                       >

@@ -144,12 +144,14 @@ const About = () => {
           <div className="w-[80%] lg:w-[70%] h-full md:px-24 mx-auto ">
             <div>
               <h1 className="text-2xl font-semibold" data-aos="fade-up" data-aos-duration="1000">
-                Benefit From Our Online Learning Expertise Earn{" "}
-                <span className="text-orange-600" >Professional</span>
+                {/* Benefit From Our Online Learning Expertise Earn */}
+                Principal's {''}
+                <span className="text-orange-600" >Message</span>
               </h1>
               <p className="mt-5" data-aos="fade-up" data-aos-duration="1000">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Reprehenderit, numquam.
+                {/* Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Reprehenderit, numquam. */}
+                {data?.aboutUs?.principalMessage?.principalMessage}
               </p>
               <div>
                 <div className="grid grid-cols-1 md:grid-cols-2  mt-4 gap-4">
